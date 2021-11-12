@@ -1,0 +1,6 @@
+_default_values.yaml
+.idea
+plan.out
+*.tfstate*
+.terraform
+.terraform.lock.hcl
