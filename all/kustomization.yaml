@@ -1,5 +1,0 @@
-resources:
-  - ../base
-  - ../internal
-  - ../external
-  - resources/namespace.yaml

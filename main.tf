@@ -1,6 +1,6 @@
 data "kustomization_overlay" "resources" {
   resources = [
-    "${path.module}/all"
+    "${path.module}/base"
   ]
   kustomize_options = {
     load_restrictor = "none"
