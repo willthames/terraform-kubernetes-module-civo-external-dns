@@ -1,6 +1,6 @@
 data "kustomization_overlay" "resources" {
   resources = [
-    "${path.module}/base"
+    "${path.module}/all"
   ]
   kustomize_options = {
     load_restrictor = "none"
@@ -26,12 +26,6 @@ data "kustomization_overlay" "resources" {
       name = "external-dns"
     }
     patch = <<-EOF
-    - op: add
-      path: /spec/template/spec/containers/0
-      value:
-        envFrom:
-          - secretRef:
-              name: external-dns-civo-token
     - op: add
       path: /spec/template/spec/containers/0/args/-
       value: --domain-filter=${var.domain}
