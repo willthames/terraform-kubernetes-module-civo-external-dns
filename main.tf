@@ -27,13 +27,13 @@ data "kustomization_overlay" "resources" {
     }
     patch = <<-EOF
     - op: add
-      path: spec.template.spec.containers.0
+      path: /spec/template/spec/containers/0
       value:
         envFrom:
           - secretRef:
               name: external-dns-civo-token
     - op: add
-      path: spec.template.spec.containers.0.args
+      path: /spec/template/spec/containers/0/args/-
       value: --domain-filter=${var.domain}
     EOF
   }
